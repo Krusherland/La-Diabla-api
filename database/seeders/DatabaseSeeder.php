@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        if (Category::exists()) {
+            return;
+        }
+
         // Create test admin user
         User::create([
             'name' => 'Admin',
